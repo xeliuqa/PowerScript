@@ -5,5 +5,11 @@ It automates 95% of the process of running a node and helps with readability thr
 <br>
 <strong>Video coming soon</strong><br>
 <br>
+<br>
+How To:
+
+
+
+<img="https://github.com/xeliuqa/PowerScript/blob/main/assets/settings.png"</img>
 
 
