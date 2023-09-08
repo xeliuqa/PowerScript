@@ -6,10 +6,10 @@ It automates 95% of the process of running a node and helps with readability thr
 <strong>Video coming soon</strong><br>
 <br>
 <br>
-How To:
+How To:<br>
+Download latest go-spacemesh node from <a href="https://github.com/spacemeshos/go-spacemesh/releases">Here</a>
 
 
-
-<img="https://github.com/xeliuqa/PowerScript/blob/main/assets/settings.png"</img>
+<img src="https://github.com/xeliuqa/PowerScript/blob/main/assets/settings.png" height="200px" widt="600px"</>
 
 
