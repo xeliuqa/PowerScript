@@ -1,0 +1,1 @@
+powershell -noexit "& ""%~dp0settings.ps1"""
