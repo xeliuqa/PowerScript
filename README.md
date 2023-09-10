@@ -29,7 +29,7 @@ It automates 95% of the process of running a node and helps with readability thr
 
 addOns
 ===
-### Disable PowerShell security
+###[Disable PowerShell security](#Disable-PowerShell-security)
 ```json
 Set -ExecutionPolicy -RemoteSigned
 ```
