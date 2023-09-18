@@ -3,21 +3,21 @@ function main {
 
 	#-------------------Start Editing-------------------
 
-	$title = "NodeTest"	                                                    #Name to show in window
+    $title = "NodeTest"	                                                    	#Name to show in window
     $walletAddress = "sm1qqqqqqpnfhpru2ecacpa7jv7l3kt6ltk73pj2ggkfdq3f"  	#Your Wallet Address
-    $provider = "0"															#Your GPU Number
-    $numunits = "4" 														# 1 unit = 64GB
-    $postFileLocation = "E:\node5"											#PoST Location
-    $filelock = "afairtest"													#Afair name (anything)
-    $maxFileSize = "2147483648"												#Bin File Zize Default 4294967296
+    $provider = "0"								#Your GPU Number
+    $numunits = "4" 								# 1 unit = 64GB
+    $postFileLocation = "E:\node5"						#PoST Location
+    $filelock = "afairtest"							#Afair name (anything)
+    $maxFileSize = "2147483648"							#Bin File Zize Default 4294967296
     #-------------------Stop Editing-------------------
     #-----------------Advance Settings-----------------
-    $config = ".\config.mainnet.json"										#config.mainnet.json Location
-    $smdataLocation = ".\sm_data"											#Node DataBase Location
-    $tcpPort = "7513" 														# If port 7513 gives problems, change to something else eg. 7514
-    $logOutputPath = "output.txt"											#Log name
-    $goSpacemeshLocation = ".\go-spacemesh.exe"								#go-sm location
-    $localDateTime = "Yes" 													# Yes/No.  This will change the log Date into a localized Time/Date.
+    $config = ".\config.mainnet.json"						#config.mainnet.json Location
+    $smdataLocation = ".\sm_data"						#Node DataBase Location
+    $tcpPort = "7513" 								# If port 7513 gives problems, change to something else eg. 7514
+    $logOutputPath = "output.txt"						#Log name
+    $goSpacemeshLocation = ".\go-spacemesh.exe"					#go-sm location
+    $localDateTime = "Yes" 							# Yes/No.  This will change the log Date into a localized Time/Date.
 
 	#-------------------Stop Editing-------------------
 
