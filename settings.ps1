@@ -8,11 +8,11 @@ function main {
     $provider = "0"															#Your GPU Number
     $numunits = "4" 														# 1 unit = 64GB
     $postFileLocation = "E:\node5"											#PoST Location
-    $config = ".\config.mainnet.json"										#config.mainnet.json Location
     $filelock = "afairtest"													#Afair name (anything)
     $maxFileSize = "2147483648"												#Bin File Zize Default 4294967296
     #-------------------Stop Editing-------------------
     #-----------------Advance Settings-----------------
+    $config = ".\config.mainnet.json"										#config.mainnet.json Location
     $smdataLocation = ".\sm_data"											#Node DataBase Location
     $tcpPort = "7513" 														# If port 7513 gives problems, change to something else eg. 7514
     $logOutputPath = "output.txt"											#Log name
