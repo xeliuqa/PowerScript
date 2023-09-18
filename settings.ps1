@@ -3,7 +3,7 @@ function main {
 
 	#-------------------Start Editing-------------------
 
-	$title = "NodeTest"	
+	$title = "NodeTest"	                                                    #Name to show in window
     $walletAddress = "sm1qqqqqqpnfhpru2ecacpa7jv7l3kt6ltk73pj2ggkfdq3f"  	#Your Wallet Address
     $provider = "0"															#Your GPU Number
     $numunits = "4" 														# 1 unit = 64GB
