@@ -1,5 +1,6 @@
 
 function main {
+$currentDate = Get-Date -Format "yyyyMMdd_HHmmss"                              	#Get current Date
 
 	#-------------------Start Editing-------------------
 
@@ -15,7 +16,7 @@ function main {
     $config = ".\config.mainnet.json"						#config.mainnet.json Location
     $smdataLocation = ".\sm_data"						#Node DataBase Location
     $tcpPort = "7513" 								# If port 7513 gives problems, change to something else eg. 7514
-    $logOutputPath = "output.txt"						#Log name
+    $logOutputPath = "output_$currentDate.txt"					#Log name use _$currentDate for diferent logs
     $goSpacemeshLocation = ".\go-spacemesh.exe"					#go-sm location
     $localDateTime = "Yes" 							# Yes/No.  This will change the log Date into a localized Time/Date.
 
