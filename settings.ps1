@@ -28,7 +28,8 @@ $currentDate = Get-Date -Format "yyyyMMdd_HHmmss"                              	
         INFO = "Cyan"
         WARN = "Yellow"
         DEBUG = "DarkYellow"
-        ERROR = "Red"       
+        ERROR = "Red" 
+	FATAL = "Magenta"
     }
 
     $searchKeyword = "ALL" # This filters on the second loglevel column (INFO, WARN, DEBUG, etc.)  Use "ALL" to see everything.
