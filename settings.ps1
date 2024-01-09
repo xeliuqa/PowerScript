@@ -70,7 +70,7 @@ function main {
         }
     }
     if (-not $processIsRunning) {
-        $process = Start-Process -NoNewWindow -FilePath $goSpacemeshLocation -ArgumentList "--listen /ip4/0.0.0.0/tcp/$tcpPort", "--config", $config, "-d", $smdataLocation, "--smeshing-coinbase", $walletAddress, "--filelock",  $filelock, "--smeshing-start",  "--smeshing-opts-datadir", $postFileLocation, "--smeshing-opts-provider", $provider, "--smeshing-opts-numunits", $numunits, "--smeshing-opts-maxfilesize", $maxFileSize,   "--grpc-public-listener", $grpcPublicListener, "--grpc-private-listener", $grpcPrivateListener,  "--grpc-json-listener", $grpcJsonListener,  "--smeshing-opts-proving-nonces", $smeshingNonces,  "--smeshing-opts-proving-threads", $smeshingThreads -RedirectStandardOutput $logOutputPath
+        $process = Start-Process -NoNewWindow -FilePath $goSpacemeshLocation -ArgumentList "--listen /ip4/0.0.0.0/tcp/$tcpPort", "--config", $config, "-d", $smdataLocation, "--smeshing-coinbase", $walletAddress, "--filelock",  $filelock,  "--smeshing-opts-datadir", $postFileLocation, "--smeshing-opts-provider", $provider, "--smeshing-opts-numunits", $numunits, "--smeshing-opts-maxfilesize", $maxFileSize,   "--grpc-public-listener", $grpcPublicListener, "--grpc-private-listener", $grpcPrivateListener,  "--grpc-json-listener", $grpcJsonListener,  "--smeshing-opts-proving-nonces", $smeshingNonces,  "--smeshing-opts-proving-threads", $smeshingThreads, "--smeshing-start" -RedirectStandardOutput $logOutputPath
     }
     colorizeLogs -logs $logOutputPath -searchKeyword $searchKeyword
 }
