@@ -23,8 +23,8 @@ It automates 95% of the process of running a node and helps with readability thr
 <p>When finished editing settings, save,close and double click "node.cmd"</p>
 <p>If not present, Power Script will create PoST folder and Log file for you</p><br>
 
-<h1>Note:</h1>
-`This version does not require config-mainnet.json but if you are a advance user you can still use a custom config file`
+<h2>Note:</h2>
+>This version does not require config-mainnet.json but if you are a advance user you can still use a custom config file
 
 addOns
 ===
