@@ -1,4 +1,10 @@
 
+<#PSScriptInfo    
+.VERSION 2.0
+.GUID 9bffb963-a8a5-42d3-b00d-22f110f2984a
+.AUTHOR Jonh
+.PROJECTURI https://github.com/xeliuqa/PowerScript
+#>
 function main {
     $currentDate = Get-Date -Format "yyyyMMdd_HHmmss"                       #Get current Date
 
@@ -45,9 +51,7 @@ function main {
         New-Item -path "$($logOutputPath)" -type File
     }
     if (!(Test-Path "$($config)")) {
-        New-Item -path "$($config)" -type File -Value ('{"p2p": {"disable-reuseport": false, "p2p-disable-legacy-discovery": true, "autoscale-peers": true, "min-peers": 10, "low-peers": 15, "high-peers": 20, "inbound-fraction": 1, "outbound-fraction": 0.5},"logging": {
-            "p2p": "error"
-        }}')
+        New-Item -path "$($config)" -type File -Value ('{"p2p": {"disable-reuseport": false, "p2p-disable-legacy-discovery": true, "autoscale-peers": true, "min-peers": 10, "low-peers": 15, "high-peers": 20, "inbound-fraction": 1, "outbound-fraction": 0.5 }}')
     }
 	if (!(Test-Path $postFileLocation -PathType Container)) {
 		New-Item -ItemType Directory -Force -Path $postFileLocation
