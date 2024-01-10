@@ -45,7 +45,9 @@ function main {
         New-Item -path "$($logOutputPath)" -type File
     }
     if (!(Test-Path "$($config)")) {
-        New-Item -path "$($config)" -type File -Value ('{"p2p": {"disable-reuseport": false,"min-peers": 10,"low-peers": 15,"high-peers": 20,"inbound-fraction": 1,"outbound-fraction": 0.5 }}')
+        New-Item -path "$($config)" -type File -Value ('{"p2p": {"disable-reuseport": false, "p2p-disable-legacy-discovery": true, "autoscale-peers": true, "min-peers": 10, "low-peers": 15, "high-peers": 20, "inbound-fraction": 1, "outbound-fraction": 0.5},"logging": {
+            "p2p": "error"
+        }}')
     }
 	if (!(Test-Path $postFileLocation -PathType Container)) {
 		New-Item -ItemType Directory -Force -Path $postFileLocation
