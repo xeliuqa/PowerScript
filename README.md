@@ -24,8 +24,9 @@ It automates 95% of the process of running a node and helps with readability thr
 <p>If not present, Power Script will create PoST folder and Log file for you</p><br>
 
 <h2>Note:</h2>
->This version does not require config-mainnet.json but if you are a advance user you can still use a custom config file
-
+`This version does not require config-mainnet.json but if you are a advance user you can still use a custom config file`
+`
+<br>
 addOns
 ===
 ###[Disable PowerShell security](#Disable-PowerShell-security)
