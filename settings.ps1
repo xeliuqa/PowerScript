@@ -1,26 +1,44 @@
 
+<#PSScriptInfo    
+.VERSION 2.0
+.GUID 9bffb963-a8a5-42d3-b00d-22f110f2984a
+.AUTHOR Jonh
+.PROJECTURI https://github.com/xeliuqa/PowerScript
+#>
 function main {
-$currentDate = Get-Date -Format "yyyyMMdd_HHmmss"                              	#Get current Date
+    $currentDate = Get-Date -Format "yyyyMMdd_HHmmss"                       #Get current Date
 
 	#-------------------Start Editing-------------------
 
-    $title = "NodeTest"	                                                    	#Name to show in window
-    $walletAddress = "sm1qqqqqqpnfhpru2ecacpa7jv7l3kt6ltk73pj2ggkfdq3f"  	#Your Wallet Address
-    $provider = "0"								#Your GPU Number
-    $numunits = "4" 								# 1 unit = 64GB
-    $postFileLocation = "E:\node5"						#PoST Location
-    $filelock = "afairtest"							#Afair name (anything)
-    $maxFileSize = "2147483648"							#Bin File Zize Default 4294967296
+	$title = "NodeName"	
+    $walletAddress = "stest1qqqqqqqpcpmljkxcscyj83uz6hl4dfhjgqjhzxqygkzwa"  # Your Wallet Address
+    $provider = "1"															# Your GPU Number
+    $numunits = "100" 														# 1 unit = 64GB
+    $postFileLocation = ".\Post"											# PoST Location
+    $filelock = "afair1"													# Afair name (anything)
+    $maxFileSize = "1073741824"												# Bin File Zize Default 4294967296
+    
+    #-----------------GRPC Settings-----------------
+    $grpcPublicListener = "0.0.0.0:9092"                                    # GRPC Ports, default 9092
+    $grpcPrivateListener = "0.0.0.0:9093"                                   # GRPC Ports, default 9093
+    $grpcJsonListener = "0.0.0.0:9094"                                      # GRPC Ports, default 9094
+    
+    #-----------------Proofing Settings-----------------
+    $smeshingNonces = "288"                                                 # Number of nonces used for proofing. (use https://plan.smesh.online/ to calculate)
+    $smeshingThreads = "0"                                                  # Number of Threads used for proofing.
+    
     #-------------------Stop Editing-------------------
+    
     #-----------------Advance Settings-----------------
-    $config = ".\config.mainnet.json"						#config.mainnet.json Location
-    $smdataLocation = ".\sm_data"						#Node DataBase Location
-    $tcpPort = "7513" 								# If port 7513 gives problems, change to something else eg. 7514
-    $logOutputPath = "output_$currentDate.txt"					#Log name use _$currentDate for diferent logs
-    $goSpacemeshLocation = ".\go-spacemesh.exe"					#go-sm location
-    $localDateTime = "Yes" 							# Yes/No.  This will change the log Date into a localized Time/Date.
-
-	#-------------------Stop Editing-------------------
+    $config = ".\config.mainnet.json"
+    $smdataLocation = ".\sm_data"											# Node DataBase Location
+    $tcpPort = "7513" 														# If port 7513 gives problems, change to something else eg. 7514
+    $logOutputPath = "output_$currentDate.txt"								# Log name
+    $goSpacemeshLocation = ".\go-spacemesh.exe"								# go-sm location
+    $localDateTime = "Yes" 													# Yes/No.  This will change the log Date into a localized Time/Date.
+    $smeshing = "--smeshing-start"                                          # Set to false if you just want DataBase
+	
+    #-------------------Stop Editing-------------------
 
     $dateColor = "Green"
     $otherColor = "DarkGray"
@@ -28,14 +46,17 @@ $currentDate = Get-Date -Format "yyyyMMdd_HHmmss"                              	
         INFO = "Cyan"
         WARN = "Yellow"
         DEBUG = "DarkYellow"
-        ERROR = "Red" 
-	FATAL = "Magenta"
+        ERROR = "Red"  
+        FATAL = "Magenta"     
     }
 
     $searchKeyword = "ALL" # This filters on the second loglevel column (INFO, WARN, DEBUG, etc.)  Use "ALL" to see everything.
     
     if (!(Test-Path "$($logOutputPath)")) {
         New-Item -path "$($logOutputPath)" -type File
+    }
+    if (!(Test-Path "$($config)")) {
+        New-Item -path "$($config)" -type File -Value ('{"p2p": {"disable-reuseport": false, "p2p-disable-legacy-discovery": true, "autoscale-peers": true, "min-peers": 10, "low-peers": 15, "high-peers": 20, "inbound-fraction": 1, "outbound-fraction": 0.5 },"logging":{"p2p":"error","grpc":"error"}}')
     }
 	if (!(Test-Path $postFileLocation -PathType Container)) {
 		New-Item -ItemType Directory -Force -Path $postFileLocation
@@ -60,7 +81,7 @@ $currentDate = Get-Date -Format "yyyyMMdd_HHmmss"                              	
         }
     }
     if (-not $processIsRunning) {
-        $process = Start-Process -NoNewWindow -FilePath $goSpacemeshLocation -ArgumentList "--listen /ip4/0.0.0.0/tcp/$tcpPort", "--config", $config, "-d", $smdataLocation, "--smeshing-coinbase", $walletAddress, "--smeshing-start", "--filelock", $filelock, "--smeshing-opts-datadir", $postFileLocation, "--smeshing-opts-provider", $provider, "--smeshing-opts-numunits", $numunits, "--smeshing-opts-maxfilesize", $maxFileSize -RedirectStandardOutput $logOutputPath
+        $process = Start-Process -NoNewWindow -FilePath $goSpacemeshLocation -ArgumentList "--listen /ip4/0.0.0.0/tcp/$tcpPort", "--config", $config, "-d", $smdataLocation, "--smeshing-coinbase", $walletAddress, "--filelock",  $filelock,  "--smeshing-opts-datadir", $postFileLocation, "--smeshing-opts-provider", $provider, "--smeshing-opts-numunits", $numunits, "--smeshing-opts-maxfilesize", $maxFileSize,   "--grpc-public-listener", $grpcPublicListener, "--grpc-private-listener", $grpcPrivateListener,  "--grpc-json-listener", $grpcJsonListener,  "--smeshing-opts-proving-nonces", $smeshingNonces,  "--smeshing-opts-proving-threads", $smeshingThreads, $smeshing -RedirectStandardOutput $logOutputPath
     }
     colorizeLogs -logs $logOutputPath -searchKeyword $searchKeyword
 }
