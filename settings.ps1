@@ -10,13 +10,13 @@ function main {
 
 	#-------------------Start Editing-------------------
 
-	$title = "NodeName"	
+    $title = "NodeName"	
     $walletAddress = "stest1qqqqqqqpcpmljkxcscyj83uz6hl4dfhjgqjhzxqygkzwa"  # Your Wallet Address
     $provider = "1"							    # Your GPU Number
     $numunits = "100" 							    # 1 unit = 64GB
     $postFileLocation = ".\Post"					    # PoST Location
     $filelock = "afair1"						    # Afair name (anything)
-    $maxFileSize = "1073741824"						    # Bin File Zize Default 4294967296
+    $maxFileSize = "4294967296"						    # Bin File Zize Default 4294967296
     
     #-----------------GRPC Settings-----------------
     $grpcPublicListener = "0.0.0.0:9092"                                    # GRPC Ports, default 9092
