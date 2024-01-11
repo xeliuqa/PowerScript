@@ -3,7 +3,7 @@ Power Script is the work of Spacemesh contributors Jonh and Sakki.<br>
 It was made to help beginners run the go-sm node for spacemesh.<br>
 It automates 95% of the process of running a node and helps with readability through colors<br>
 <br>
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/IF4jAciMn0o/0.jpg)](https://www.youtube.com/watch?v=IF4jAciMn0o)
+[![IMAGE ALT TEXT HERE](https://github.com/xeliuqa/PowerScript/blob/main/assets/spacemesh.png)](https://youtu.be/_u9rgxa1D2o)
 <br>
 <br>
 <div id="How to:" class="tabcontent">
