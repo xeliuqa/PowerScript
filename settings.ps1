@@ -12,11 +12,11 @@ function main {
 
 	$title = "NodeName"	
     $walletAddress = "stest1qqqqqqqpcpmljkxcscyj83uz6hl4dfhjgqjhzxqygkzwa"  # Your Wallet Address
-    $provider = "1"															# Your GPU Number
-    $numunits = "100" 														# 1 unit = 64GB
-    $postFileLocation = ".\Post"											# PoST Location
-    $filelock = "afair1"													# Afair name (anything)
-    $maxFileSize = "1073741824"												# Bin File Zize Default 4294967296
+    $provider = "1"							    # Your GPU Number
+    $numunits = "100" 							    # 1 unit = 64GB
+    $postFileLocation = ".\Post"					    # PoST Location
+    $filelock = "afair1"						    # Afair name (anything)
+    $maxFileSize = "1073741824"						    # Bin File Zize Default 4294967296
     
     #-----------------GRPC Settings-----------------
     $grpcPublicListener = "0.0.0.0:9092"                                    # GRPC Ports, default 9092
@@ -31,11 +31,11 @@ function main {
     
     #-----------------Advance Settings-----------------
     $config = ".\config.mainnet.json"
-    $smdataLocation = ".\sm_data"											# Node DataBase Location
-    $tcpPort = "7513" 														# If port 7513 gives problems, change to something else eg. 7514
-    $logOutputPath = "output_$currentDate.txt"								# Log name
-    $goSpacemeshLocation = ".\go-spacemesh.exe"								# go-sm location
-    $localDateTime = "Yes" 													# Yes/No.  This will change the log Date into a localized Time/Date.
+    $smdataLocation = ".\sm_data"					    # Node DataBase Location
+    $tcpPort = "7513" 							    # If port 7513 gives problems, change to something else eg. 7514
+    $logOutputPath = "output_$currentDate.txt"				    # Log name
+    $goSpacemeshLocation = ".\go-spacemesh.exe"				    # go-sm location
+    $localDateTime = "Yes" 						    # Yes/No.  This will change the log Date into a localized Time/Date.
     $smeshing = "--smeshing-start"                                          # Set to false if you just want DataBase
 	
     #-------------------Stop Editing-------------------
