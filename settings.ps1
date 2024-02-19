@@ -16,7 +16,7 @@ function main {
     $numunits = "100"                                                       # 1 unit = 64GB
     $postFileLocation = ".\Post"                                            # PoST Location
     $filelock = "afair1"                                                    # Afair name (anything)
-    $maxFileSize = "4294967296"                                             # Bin File Zize Default 4294967296
+    $maxFileSize = "4294967296"                                             # Bin File Size Default 4294967296
     
     #-----------------GRPC Settings-----------------
     $grpcPublicListener = "0.0.0.0:9092"                                    # GRPC Ports, default 9092
@@ -36,7 +36,7 @@ function main {
     $logOutputPath = "output_$currentDate.txt"                              # Log name
     $goSpacemeshLocation = ".\go-spacemesh.exe"                             # go-sm location
     $localDateTime = "Yes"                                                  # Yes/No.  This will change the log Date into a localized Time/Date.
-    $smeshing = "--smeshing-start"                                          # Set to false if you just want DataBase
+    $smeshing = "--smeshing-start"                                          # Set to " " if you just want non smeshing node
 	
     #-------------------Stop Editing-------------------
 
