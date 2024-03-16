@@ -1,6 +1,6 @@
 
 <#PSScriptInfo    
-.VERSION 2.0
+.VERSION 2.1
 .GUID 9bffb963-a8a5-42d3-b00d-22f110f2984a
 .AUTHOR Jonh
 .PROJECTURI https://github.com/xeliuqa/PowerScript
@@ -21,7 +21,7 @@ function main {
     #-----------------GRPC Settings-----------------
     $grpcPublicListener = "0.0.0.0:9092"                                    # GRPC Ports, default 9092
     $grpcPrivateListener = "0.0.0.0:9093"                                   # GRPC Ports, default 9093
-    $grpcJsonListener = "0.0.0.0:9094"                                      # GRPC Ports, default 9094
+    $grpcPostListener = "0.0.0.0:9094"                                      # GRPC Ports, default 9094
     
     #-----------------Proofing Settings-----------------
     $smeshingNonces = "288"                                                 # Number of nonces used for proofing. (use https://plan.smesh.online/ to calculate)
@@ -81,7 +81,7 @@ function main {
         }
     }
     if (-not $processIsRunning) {
-        $process = Start-Process -NoNewWindow -FilePath $goSpacemeshLocation -ArgumentList "--listen /ip4/0.0.0.0/tcp/$tcpPort", "--config", $config, "-d", $smdataLocation, "--smeshing-coinbase", $walletAddress, "--filelock",  $filelock,  "--smeshing-opts-datadir", $postFileLocation, "--smeshing-opts-provider", $provider, "--smeshing-opts-numunits", $numunits, "--smeshing-opts-maxfilesize", $maxFileSize,   "--grpc-public-listener", $grpcPublicListener, "--grpc-private-listener", $grpcPrivateListener,  "--grpc-json-listener", $grpcJsonListener,  "--smeshing-opts-proving-nonces", $smeshingNonces,  "--smeshing-opts-proving-threads", $smeshingThreads, $smeshing -RedirectStandardOutput $logOutputPath
+        $process = Start-Process -NoNewWindow -FilePath $goSpacemeshLocation -ArgumentList "--listen /ip4/0.0.0.0/tcp/$tcpPort", "--config", $config, "-d", $smdataLocation, "--smeshing-coinbase", $walletAddress, "--filelock",  $filelock,  "--smeshing-opts-datadir", $postFileLocation, "--smeshing-opts-provider", $provider, "--smeshing-opts-numunits", $numunits, "--smeshing-opts-maxfilesize", $maxFileSize,   "--grpc-public-listener", $grpcPublicListener, "--grpc-private-listener", $grpcPrivateListener,  "--grpc-post-listener", $grpcPostListener,  "--smeshing-opts-proving-nonces", $smeshingNonces,  "--smeshing-opts-proving-threads", $smeshingThreads, $smeshing -RedirectStandardOutput $logOutputPath
     }
     colorizeLogs -logs $logOutputPath -searchKeyword $searchKeyword
 }
